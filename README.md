@@ -29,18 +29,26 @@ User Question → Embedding → Similarity Search → Top 3 Chunks
 - **Data:** Wikipedia (8 FMCG/AI articles)
 
 ## How to Run
-1. Clone the repo
-2. Install dependencies:
-pip install langchain langchain-groq langchain-huggingface 
-chromadb python-dotenv wikipedia-api
-3. Add GROQ_API_KEY to .env file
-4. Fetch data: python fetch_data.py
-5. Run RAG system: python app.py
-6. Run evaluation: python evaluate.py
+1. Clone the repo and install the dependencies:
+   ```
+   git clone https://github.com/yneha3229/rag-fmcg-hackathon.git
+   cd rag-fmcg-hackathon
+   pip install -r requirements.txt
+   ```
+2. Create a `.env` file containing your Groq API key:
+   ```
+   GROQ_API_KEY=your_key_here
+   ```
+3. Fetch the data, run the RAG system, and run the evaluation:
+   ```
+   python fetch_data.py
+   python app.py
+   python evaluate.py
+   ```
 
 ## Results
 Strategy 1 (large chunks) outperformed Strategy 2 (small chunks)
-with 83% vs 73% accuracy across 10 test queries.
+with a keyword-match score of 83% vs 73% across 10 test queries.
 Larger chunks preserve semantic context better for 
 factual Q&A on FMCG topics.
 
